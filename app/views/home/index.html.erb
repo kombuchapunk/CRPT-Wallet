@@ -1,3 +1,5 @@
 <p><%= current_user.first_name %> <%= current_user.last_name %></p>
 <p><%= @network %> address: <%= @address %></p>
-<p>Balance: <%= @balance %></p>
+<p><%= @network %> Balance: <%= @balance.to_s %> <%= @network %></p>
+<p>USD Balance: <%= (@balance * @price).to_s %> USD</p>
+<p><%= @network %> Price: <%= @price.to_s %> USD</p>
