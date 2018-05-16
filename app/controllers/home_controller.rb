@@ -5,24 +5,31 @@ before_action :authenticate_user!
     wallet_response = BlockIo.get_address_by :label => current_user.wallet
     wallet = JSON.parse(wallet_response.to_json)
     @network = wallet["data"]["network"]
-    @address = wallet["data"]["address"]
+    @address = current_user.btc_address
     @balance = wallet["data"]["available_balance"].to_d
+
     price_response = BlockIo.get_current_price :price_base => 'USD'
     price = JSON.parse(price_response.to_json)
     @price = price["data"]["prices"][0]["price"].to_d
+
+    sent_response = BlockIo.get_transactions :type => 'sent', :addresses => current_user.btc_address
+    sent = JSON.parse(sent_response.to_json)
+    @sent = sent["data"]["txs"]
+
+    received_response = BlockIo.get_transactions :type => 'received', :addresses => current_user.btc_address
+    received = JSON.parse(received_response.to_json)
+    @received = received["data"]["txs"]
+
     render :index
   end
 
-  def send_money_to_address
+  def send_btc_to_address
     BlockIo.withdraw_from_labels :amounts => 'AMOUNT1,AMOUNT2,...', :from_labels => 'LABEL1,LABEL2,...', :to_addresses => 'ADDRESS1,ADDRESS2,...'
     render :index
   end
 
-  def send_money_to_user
-    wallet_response = BlockIo.get_address_by :label => current_user.wallet
-    wallet = JSON.parse(wallet_response.to_json)
-    @address = wallet["data"]["address"]
-    BlockIo.get_transactions :type => 'sent', :addresses => @address
+  def send_btc_to_user
+    BlockIo.get_transactions :type => 'sent', :addresses => current_user.btc_address
     render :index
   end
 

@@ -9,7 +9,7 @@ class RegistrationController < Devise::RegistrationsController
       response = BlockIo.get_new_address.to_json
       json = JSON.parse(response)
       resource.wallet = json["data"]["label"]
-      resource.address = json["data"]["address"]
+      resource.btc_address = json["data"]["address"]
       resource.save
     end
   end
