@@ -8,9 +8,9 @@ before_action :authenticate_user!
     @address = current_user.btc_address
     @balance = wallet["data"]["available_balance"].to_d
 
-    price_response = BlockIo.get_current_price :price_base => 'USD'
-    price = JSON.parse(price_response.to_json)
-    @price = price["data"]["prices"][0]["price"].to_d
+    # price_response = BlockIo.get_current_price :price_base => 'USD'
+    # price = JSON.parse(price_response.to_json)
+    # @price = price["data"]["prices"][0]["price"].to_d
 
     sent_response = BlockIo.get_transactions :type => 'sent', :addresses => current_user.btc_address
     sent = JSON.parse(sent_response.to_json)

@@ -1,17 +1,43 @@
-<p><%= current_user.first_name %> <%= current_user.last_name %></p>
-<p><%= @network %> address: <%= @address %></p>
-<p><%= @network %> Balance: <%= @balance.to_s %> <%= @network %></p>
-<p>USD Balance: <%= (@balance * @price).to_s %> USD</p>
-<p><%= @network %> Price: <%= @price.to_s %> USD</p>
 
-<p>Last sent transactions: </p>
-<ul>
-<% @sent.each do |sent| %>
-  <li><%= sent %></li>
-<% end %>
-</ul>
-<p>Last received transactions: </p>
-<% @received.each do |received| %>
-  <li><%= received %></li>
-<% end %>
-</ul>
+<div class="card card-wallet">
+  <p><%= current_user.first_name %> <%= current_user.last_name %></p>
+  <p><%= @network %> address: <%= @address %></p>
+  <p><%= @network %> Balance: <%= @balance.to_s %> <%= @network %></p>
+  <p><%= @network %> Price: <%= @price.to_s %> USD</p>
+
+  <p>Last sent transactions: </p>
+  <table>
+    <tr>
+      <th>Transaction ID</th>
+      <th>Receiver</th>
+      <th>Confirmations</th>
+      <th>Amount</th>
+    </tr>
+    <% @sent.each do |sent| %>
+    <tr>
+      <td><%= JSON.parse(sent.to_json)["txid"] %></td>
+      <td><%= JSON.parse(sent.to_json)["receivers"][0] %></td>
+      <td><%= JSON.parse(sent.to_json)["confirmations"] %></td>
+      <td><%= JSON.parse(sent.to_json)["amounts_sent"][0]["amount"] %></td>
+    </tr>
+    <% end %>
+  </table>
+
+  <p>Last received transactions: </p>
+  <table>
+    <tr>
+      <th>Transaction ID</th>
+      <th>Sender</th>
+      <th>Confirmations</th>
+      <th>Amount</th>
+    </tr>
+    <% @received.each do |received| %>
+    <tr>
+      <td><%= JSON.parse(received.to_json)["txid"] %></td>
+      <td><%= JSON.parse(received.to_json)["senders"][0] %></td>
+      <td><%= JSON.parse(received.to_json)["confirmations"] %></td>
+      <td><%= JSON.parse(received.to_json)["amounts_received"][0]["amount"] %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

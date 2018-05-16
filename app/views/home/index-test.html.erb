@@ -1,0 +1,17 @@
+<p><%= current_user.first_name %> <%= current_user.last_name %></p>
+<p><%= @network %> address: <%= @address %></p>
+<p><%= @network %> Balance: <%= @balance.to_s %> <%= @network %></p>
+<!-- <p>USD Balance: <%= (@balance * @price).to_s %> USD</p> -->
+<p><%= @network %> Price: <%= @price.to_s %> USD</p>
+
+<p>Last sent transactions: </p>
+<ul>
+<% @sent.each do |sent| %>
+  <li><%= sent %></li>
+<% end %>
+</ul>
+<p>Last received transactions: </p>
+<% @received.each do |received| %>
+  <li><%= received %></li>
+<% end %>
+</ul>
