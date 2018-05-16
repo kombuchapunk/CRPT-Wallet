@@ -12,4 +12,8 @@ before_action :authenticate_user!
     @price = price["data"]["prices"][0]["price"].to_d
   end
 
+  def send_money
+
+  end
+  
 end
