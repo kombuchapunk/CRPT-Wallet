@@ -16,7 +16,7 @@
  */
 
 @import "materialize/components/color-variables";
-$primary-color: color("blue", "lighten-2") !default;
+$primary-color: color("blue-grey", "darken-3") !default;
 $secondary-color: color("pink", "darken-4") !default;
 @import 'materialize';
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
@@ -74,6 +74,8 @@ body::before {
   color: #fff;
   width: 100%;
   top: 0;
+  text-align: center;
+  line-height: 2em;
 }
 
 .auth-form {
