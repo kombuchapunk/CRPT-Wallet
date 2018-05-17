@@ -3,12 +3,98 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .card-wallet {
-  padding: 30px;
+  padding: 0 !important;
   padding-top: 0;
   top: 10vh;
+  max-width: 1000px;
+  margin: 0 auto !important;
+}
+.row {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.menu {
+  padding: 0 !important;
+}
+.tabs {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  height: 70px !important;
+  li {
+    height: 70px !important;
+
+    a {
+      line-height: 70px !important;
+      color: #fff !important;
+      font-weight: bold;
+      background: rgba(44,62,80 ,1);
+      height: 70px !important;
+    }
+    a:hover {
+      background: #fff;
+      color: rgba(52, 73, 94,1.0) !important;
+      padding-top: 0 !important;
+    }
+    .active {
+      color: #455a64 !important;
+      background: #fff !important;
+      box-shadow: 5px -1px 2px -2px rgba(0,0,0,0.67);
+    }
+  }
+  .indicator {
+    display: none;
+    height: 0px !important;
+  }
 }
 
-.tabs {
-  margin-left: -40px !important;
-  margin-right: -40px !important;
+.tab-content {
+  padding: 30px !important;
+  padding-top: 0px !important;
+}
+
+.table-name {
+  display: block;
+  max-width: 340px;
+  padding: 15px;
+  background-color: #4a148c;
+  font-weight: bold;
+  border-top-right-radius: 10px;
+  margin-top: 15px;
+  color: #fff;
+  text-align: center;
+}
+
+td, tr, th {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+table {
+  border: 1px #4a148c solid !important;
+}
+
+.balance {
+  display: block;
+  padding: 10px;
+  background: #fff;
+  color: #000;
+}
+
+h3 {
+  font-family: Poppins !important;
+  font-weight: bold !important;
+  margin-left: 10px !important;
+  margin-bottom: -35px !important;
+}
+
+#address {
+  display: block;
+  padding: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  background: rgba(44,62,80 ,0.9);
+  color: #fff;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  max-width: 350px;
 }
