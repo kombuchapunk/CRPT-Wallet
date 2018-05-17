@@ -24,7 +24,7 @@ before_action :authenticate_user!
   end
 
   def send_btc_to_address
-    BlockIo.withdraw_from_labels :amounts => 'AMOUNT1,AMOUNT2,...', :from_labels => 'LABEL1,LABEL2,...', :to_addresses => 'ADDRESS1,ADDRESS2,...'
+    BlockIo.withdraw_from_labels :amounts => params[:amount], :from_labels => current_user.wallet, :to_addresses => params[:receiver]
     render :index
   end
 

@@ -14,7 +14,7 @@
     <!--WALLET-->
     <div id="wallet" class="col s12 tab-content">
       <h3><%= current_user.first_name %> <%= current_user.last_name %></p></h3>
-      <div id="address"><%= @address %></div>
+      <div id="address"><%= @address %></div><hr>
       <div class="row">
 
         <div class="col s12 m6">
@@ -41,7 +41,18 @@
     </div>
 
     <!--SEND-->
-    <div id="send" class="col s12 tab-content">Test 2</div>
+    <div id="send" class="col s12 tab-content">
+      
+      <h3>Send money</h3><br><br><hr>
+      <%= form_tag({controller: "home", action: "send_btc_to_address"}, method: "post") do %>
+        <%= label_tag(:receiver, "Receiver address:") %>
+        <%= text_field_tag(:receiver) %>
+        <%= label_tag(:amount, "Amount:") %>
+        <%= text_field_tag(:amount) %>
+        <%= submit_tag("Send") %>
+      <% end %>
+
+    </div>
 
     <!--TRANSACTIONS-->
     <div id="transactions" class="col s12 tab-content">
@@ -55,7 +66,7 @@
           </tr>
           <% @sent.each do |sent| %>
           <tr>
-            <td><%= JSON.parse(sent.to_json)["receivers"][0] %></td>
+            <td><%= JSON.parse(sent.to_json)["amounts_sent"][0]["recipient"] %></td>
             <td><%= JSON.parse(sent.to_json)["confirmations"] %></td>
             <td><%= JSON.parse(sent.to_json)["amounts_sent"][0]["amount"] %></td>
           </tr>
@@ -91,6 +102,8 @@
     </div>
 
     <!--PROFILE-->
-    <div id="profile" class="col s12 tab-content">Test 4</div>
+    <div id="profile" class="col s12 tab-content">
+      <h3>Profile</h3><br><br><hr>
+    </div>
 
   </div>

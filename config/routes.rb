@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     get 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
 
+  match '/send_btc', to: 'home#send_btc_to_address', via: 'post'
+
   root to: 'home#index'
 end
