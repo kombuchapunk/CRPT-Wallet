@@ -18,7 +18,7 @@
       <div class="row">
 
         <div class="col s12 m6">
-          <div class="card purple darken-4">
+          <div class="card indigo darken-4">
             <div class="card-content white-text">
               <span class="card-title"><%= @network %> Balance: </span>
               <div class="balance"><%= @balance.to_s %> <%= @network %></div>
@@ -27,7 +27,7 @@
         </div>
 
         <div class="col s12 m6">
-          <div class="card purple darken-4">
+          <div class="card indigo darken-4">
             <div class="card-content white-text">
               <span class="card-title">USD Balance: </span>
               <div class="balance"><%= "%.2f" % (@balance * 8720).to_s %> USD</div>
@@ -37,7 +37,7 @@
 
      </div>
 
-      <p><%= @network %> Price: <%= @price.to_s %> USD</p>
+      <div id="current-price">Current <%= @network %> Price: <%= @price.to_s %> USD</div>
     </div>
 
     <!--SEND-->

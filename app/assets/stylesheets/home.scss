@@ -27,8 +27,10 @@
       line-height: 70px !important;
       color: #fff !important;
       font-weight: bold;
+      font-size: 1.1em !important;
       background: rgba(44,62,80 ,1);
       height: 70px !important;
+      font-style: Poppins !important;
     }
     a:hover {
       background: #fff;
@@ -56,9 +58,10 @@
   display: block;
   max-width: 340px;
   padding: 15px;
-  background-color: #4a148c;
+  background-color: #1a237e;
   font-weight: bold;
-  border-top-right-radius: 10px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
   margin-top: 15px;
   color: #fff;
   text-align: center;
@@ -70,7 +73,7 @@ td, tr, th {
 }
 
 table {
-  border: 1px #4a148c solid !important;
+  border: 1px #1a237e solid !important;
 }
 
 .balance {
@@ -84,7 +87,7 @@ h3 {
   font-family: Poppins !important;
   font-weight: bold !important;
   margin-left: 10px !important;
-  margin-bottom: -35px !important;
+  margin-bottom: -40px !important;
 }
 
 #address {
@@ -97,4 +100,8 @@ h3 {
   margin-left: 10px;
   margin-bottom: 20px;
   max-width: 350px;
+}
+
+#current-price {
+  margin-left: 10px;
 }

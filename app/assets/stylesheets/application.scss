@@ -17,7 +17,7 @@
 
 @import "materialize/components/color-variables";
 $primary-color: color("blue-grey", "darken-3") !default;
-$secondary-color: color("purple", "darken-4") !default;
+$secondary-color: color("indigo", "darken-4") !default;
 @import 'materialize';
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Roboto');
@@ -42,7 +42,7 @@ body::before {
   background: #913D88;
   /* IE Fallback */
   background: rgba(145, 61, 136, 0.8);
-  background: linear-gradient(270deg, rgba(142, 68, 173, 0.8), rgba(68, 108, 179, 0.8));
+  background: linear-gradient(270deg, rgba(26, 35, 126, 0.8), rgba(25, 118, 210, 0.8));
   background-size: 400% 400%;
 
   -webkit-animation: AnimationName 30s ease infinite;
