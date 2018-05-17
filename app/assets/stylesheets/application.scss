@@ -68,9 +68,17 @@ body::before {
     height: 100%;
 }
 
+.notice, .alert {
+  display: block;
+  background: rgba(44,62,80,0.5);
+  color: #fff;
+  width: 100%;
+  top: 0;
+}
+
 .auth-form {
   margin: 0 auto;
-  width: 360px;
+  max-width: 420px;
   padding: 30px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -102,6 +110,10 @@ body::before {
     color: #333;
     text-align: center;
   }
+  h2 {
+    font-size: 14pt;
+    font-weight: bold;
+  }
 }
 
 // LOGO 3D CRYPTO
@@ -113,7 +125,7 @@ body::before {
   color: #fff;
   .view {
     margin: 0 auto;
-    margin-top: 15vh;
+    margin-top: 10vh;
     -webkit-perspective: 400;
             perspective: 400;
   }
