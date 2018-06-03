@@ -9,6 +9,21 @@ https://pro2-bar-s3-cdn-cf3.myportfolio.com/257c8eced7e830e5d34f94f741276bf4/ee1
 
 ## Setup/Installation Requirements
 
+Clone the project directory to your local computer.
+
+Install dependencies:
+```
+bundle install
+```
+Setup the database:
+```
+rails db:setup
+```
+Serve the app on localhost:
+```
+rails s
+```
+
 ## Specifications (use case scenarios)
 
 * User can sign up with an email.
