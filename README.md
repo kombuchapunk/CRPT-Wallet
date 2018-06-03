@@ -1,6 +1,6 @@
 # CRPT Wallet
 
-## Simple and user-friendly cryptocurrency (BTC) wallet built with Ruby on Rails. (LTC and DOGE in progress)
+### Simple and user-friendly cryptocurrency (BTC) wallet built with Ruby on Rails. (LTC and DOGE support is in progress)
 
 #### By _**Misha Petrov**_
 
